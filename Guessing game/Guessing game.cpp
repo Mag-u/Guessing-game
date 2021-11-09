@@ -23,7 +23,7 @@ int main()
 		endingNumber = startingNumber;                                                       //
 		startingNumber = copy;                                                                //
 	}                                                                                          //
-	else if (startingNumber == endingNumber)                                                    //
+	else if (startingNumber == endingNumber)                                                    // 
 	{                                                                                            //
 		cout << "The numbers are that same and becouse of it the game can't start" << endl;        //              AS FUNCTION
 		cout << "Do you want to input numbers again? Y/N";                                       //
