@@ -36,7 +36,7 @@ int main()
 
 	cout << "Input the number of chances for guess: ";
 	cin >> chances;
-	number = rand() % endingNumber + startingNumber;
+	number = rand() % startingNumber+ endingNumber;
 	cout << endl << "Start guessing: ";
 	while (guessingNumber != number)
 	{
@@ -45,9 +45,14 @@ int main()
 		chances--;
 		if (chances == 0)
 		{
-			cout << "You lost";
+			cout << "You lost"<<endl;
 			cout << "The number was: " << number;
 			exit(0);
 		}
+	}
+
+	if (guessingNumber == number)
+	{
+		cout << "Congratulation you have won";
 	}
 }
