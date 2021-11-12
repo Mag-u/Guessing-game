@@ -16,7 +16,7 @@ int main()
 	cout << "Input the ending number: ";
 	cin >> endingNumber;
 	cout << endl;
-
+	srand(time(NULL));
 	if (startingNumber > endingNumber)															//
 	{																					       //
 		copy = endingNumber;																  //		
@@ -33,26 +33,35 @@ int main()
 			exit(0);                                                                             //
 		}                                                                                         //
 	}																							   //
-
+	chances = chances + 1;
 	cout << "Input the number of chances for guess: ";
 	cin >> chances;
-	number = rand() % startingNumber+ endingNumber;
+	number = rand() % (endingNumber+1-startingNumber)+startingNumber;
 	cout << endl << "Start guessing: ";
 	while (guessingNumber != number)
 	{
-		cout << "You have " << chances << " lives " << endl;
+		if (chances!=1)
+		{
+			cout << "You have " << chances << " lives " << endl;
+
+		}
+		else {
+			cout << "You have " << chances << " live " << endl;
+
+		}
 		cin >> guessingNumber;
-		chances--;
 		if (chances == 0)
 		{
 			cout << "You lost"<<endl;
 			cout << "The number was: " << number;
 			exit(0);
 		}
-	}
+	
 
 	if (guessingNumber == number)
 	{
 		cout << "Congratulation you have won";
+	}
+	chances--;
 	}
 }
