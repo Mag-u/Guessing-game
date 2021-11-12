@@ -50,18 +50,17 @@ int main()
 
 		}
 		cin >> guessingNumber;
-		if (chances == 0)
-		{
-			cout << "You lost"<<endl;
-			cout << "The number was: " << number;
-			exit(0);
-		}
-	
-
+		
 	if (guessingNumber == number)
 	{
 		cout << "Congratulation you have won";
 	}
 	chances--;
+	if (chances == 0)
+		{
+			cout << "You lost"<<endl;
+			cout << "The number was: " << number;
+			exit(0);
+		}
 	}
 }
