@@ -17,22 +17,30 @@ int main()
 	cin >> endingNumber;
 	cout << endl;
 	srand(time(NULL));
-	if (startingNumber > endingNumber)															//
-	{																					       //
-		copy = endingNumber;																  //		
-		endingNumber = startingNumber;                                                       //
-		startingNumber = copy;                                                                //
-	}                                                                                          //
-	else if (startingNumber == endingNumber)                                                    // 
-	{                                                                                            //
-		cout << "The numbers are that same and becouse of it the game can't start" << endl;        //              AS FUNCTION
-		cout << "Do you want to input numbers again? Y/N";                                       //
-		cin >> stopProgram;                                                                    //
-		if (stopProgram != "Y")                                                                //
-		{                                                                                       //
-			exit(0);                                                                             //
-		}                                                                                         //
-	}																							   //
+	while (startingNumber == endingNumber)
+	{
+		cout << "The numbers are that same and becouse of it the game can't start" << endl;
+		cout << "Do you want to input numbers again? Y/N";
+		cin >> stopProgram;
+		if (stopProgram != "Y")
+		{
+			exit(0);
+		}
+		else {
+			cout << "The first number: ";
+			cin >> startingNumber;
+			cout << endl;
+			cout << "The last number: ";
+			cin >> endingNumber;
+			cout << endl;
+		}
+	}
+	if (startingNumber > endingNumber)
+	{
+		copy = endingNumber;
+		endingNumber = startingNumber;
+		startingNumber = copy;
+	}
 	chances = chances + 1;
 	cout << "Input the number of chances for guess: ";
 	cin >> chances;
